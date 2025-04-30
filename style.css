@@ -1,0 +1,135 @@
+:root {
+  --primary: #1a1a2e;
+  --secondary: #16213e;
+  --accent: #00b4d8;
+  --text: #e6f1ff;
+  --error: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: var(--primary);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.settings {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.rotor-settings, .plugboard-section {
+  flex: 1;
+}
+
+.plugboard-section {
+  background: rgba(0, 180, 216, 0.1);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+}
+
+#plugboard-grid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 0.5rem;
+}
+
+.plugboard-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 180, 216, 0.2);
+  border: 1px dashed var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.plugboard-cell:hover {
+  background: rgba(0, 180, 216, 0.3);
+}
+
+.plugboard-cell.active {
+  background: var(--accent);
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+button {
+  background: var(--accent);
+  color: var(--secondary);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background: #0096c7;
+}
+
+.output {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 4px;
+  min-height: 60px;
+  margin-top: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+.output.error {
+  color: var(--error);
+}
+
+@media (max-width: 768px) {
+  .settings {
+    flex-direction: column;
+  }
+}

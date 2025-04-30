@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enigma Machine Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Enigma Machine</h1>
+
+    <div class="rotor-settings">
+      <label for="rotor1">Rotor I:</label>
+      <select id="rotor1">
+        <option>I</option>
+        <option>II</option>
+        <option>III</option>
+        <option>IV</option>
+        <option>V</option>
+        <option>VI</option>
+      </select>
+
+      <label for="rotorPos1">Rotor Position:</label>
+      <input type="text" id="rotorPos1" maxlength="1" value="A">
+    </div>
+
+    <div class="message-section">
+      <label for="message">Enter Message:</label>
+      <textarea id="message" placeholder="HELLO WORLD"></textarea>
+
+      <label>Encrypted Output:</label>
+      <div class="output" id="outputText">...</div>
+    </div>
+
+    <!-- Plugboard Interface -->
+    <div id="plugboard-section">
+      <h2>Plugboard</h2>
+      <div id="plugboard-pairs"></div>
+      <button id="add-pair">Add Pair</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
